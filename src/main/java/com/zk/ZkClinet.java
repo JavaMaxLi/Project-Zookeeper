@@ -15,11 +15,16 @@ public class ZkClinet {
     private static String zkUrl = "101.43.13.93:2191";
     private ZooKeeper zooKeeper;
 
+    /**
+     * 连接Zookeeper，并创建/IDEA节点值为“test api”
+     * @throws Exception
+     */
     @Test
     public void init() throws Exception {
         zooKeeper = new ZooKeeper(zkUrl, 4000, new Watcher() {
             @Override
             public void process(WatchedEvent watchedEvent) {
+
             }
         });
         try {
