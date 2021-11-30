@@ -28,8 +28,6 @@ public class DistributedLockDemo extends FrameWorkConstants {
                 }
 
                 if (watchedEvent.getType() == Watcher.Event.EventType.NodeDeleted && watchedEvent.getPath().equals(prevNode)) {
-                    System.out.println("=============watchedEvent.getType()============="+watchedEvent.getType());
-                    System.out.println("=============watchedEvent.getPath()============="+watchedEvent.getPath());
                     wait.countDown();
                 }
            });
